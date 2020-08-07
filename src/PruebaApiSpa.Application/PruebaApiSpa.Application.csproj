@@ -11,6 +11,10 @@
     <RootNamespace>PruebaApiSpa</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="NinjaNye.SearchExtensions" Version="3.0.1" />
+    <PackageReference Include="X.PagedList" Version="8.0.7" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\PruebaApiSpa.Core\PruebaApiSpa.Core.csproj" />
   </ItemGroup>
 </Project>

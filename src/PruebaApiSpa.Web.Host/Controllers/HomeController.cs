@@ -9,6 +9,10 @@ namespace PruebaApiSpa.Web.Host.Controllers
 {
     public class HomeController : PruebaApiSpaControllerBase
     {
+        /// <summary>
+        /// Index redirect to Swagger
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             return Redirect("/swagger");

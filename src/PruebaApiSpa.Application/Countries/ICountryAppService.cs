@@ -8,7 +8,7 @@ namespace PruebaApiSpa.Countries
     public interface ICountryAppService: IApplicationService
     {
         Task<ContextDto<CountryDto>> GetAll(SearchDto filters);
-        Task<CountryDto> Get(long id);
+        Task<CountryInputDto> Get(long id);
         Task<CountryDto> AddOrUpdate(CountryInputDto input);
         Task Delete(long id);
     }

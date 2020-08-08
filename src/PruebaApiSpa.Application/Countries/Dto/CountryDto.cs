@@ -10,5 +10,6 @@ namespace PruebaApiSpa.Countries.Dto
         public string ShortName { get; set; }
         public string Alpha2Code { get; set; }
         public string LinkSubDivision { get; set; }
+        public int ProvincesCount { get; set; }
     }
 }

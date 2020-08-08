@@ -1,8 +1,8 @@
-﻿using Abp;
-using Abp.Authorization;
+﻿using Abp.Authorization;
 using Abp.Domain.Repositories;
 using Abp.Extensions;
 using Abp.UI;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using NinjaNye.SearchExtensions;
@@ -11,9 +11,7 @@ using PruebaApiSpa.Countries.Dto;
 using PruebaApiSpa.Domain;
 using PruebaApiSpa.Extensions;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using X.PagedList;
 
@@ -32,6 +30,7 @@ namespace PruebaApiSpa.Countries
             _provinceRepository = provinceRepository;
         }
 
+        [HttpPost]
         public async Task<CountryDto> AddOrUpdate(CountryInputDto input)
         {
             var country = _countryRepository.FirstOrDefault(x => x.Id == input.Id);
@@ -74,6 +73,7 @@ namespace PruebaApiSpa.Countries
             return ObjectMapper.Map<CountryDto>(country);
         }
 
+        [HttpPost]
         public async Task Delete(long id)
         {
             var country = await _countryRepository.FirstOrDefaultAsync(x => x.Id == id);
@@ -93,17 +93,20 @@ namespace PruebaApiSpa.Countries
             }
         }
 
-        public async Task<CountryDto> Get(long id)
+        [HttpGet]
+        public async Task<CountryInputDto> Get(long id)
         {
             var country = await _countryRepository.GetAsync(id);
-            return ObjectMapper.Map<CountryDto>(country);
+            return ObjectMapper.Map<CountryInputDto>(country);
         }
 
+        [HttpPost]
         public async Task<ContextDto<CountryDto>> GetAll(SearchDto filters)
         {
             filters.Search = filters.Search.IsNullOrEmpty() ? "" : filters.Search.Trim().ToLower();
             var context = _countryRepository
                 .GetAll()
+                .Include(x => x.Provinces)
                 .Search(x => x.ShortName.ToLower(),
                         x => x.Alpha2Code.ToLower(),
                         x => x.Alpha3Code.ToLower(),

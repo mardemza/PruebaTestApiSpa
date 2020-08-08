@@ -4,7 +4,7 @@ using PruebaApiSpa.Domain;
 
 namespace PruebaApiSpa.Countries.Dto
 {
-    [AutoMapTo(typeof(Country))]
+    [AutoMap(typeof(Country))]
     public class CountryInputDto : EntityBaseDto
     {
         public string ShortName { get; set; }

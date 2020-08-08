@@ -46,7 +46,7 @@ export class CountriesComponent extends AppComponentBase implements OnInit {
   }
 
   pageChanged(event) {
-    console.log(event);
+    this.getDataPage(event);
   }
 
   createCountry() {

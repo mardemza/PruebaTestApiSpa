@@ -1,10 +1,11 @@
-﻿using PruebaApiSpa.Base;
+﻿using Abp.Application.Services;
+using PruebaApiSpa.Base;
 using PruebaApiSpa.Subdivisions.Dto;
 using System.Threading.Tasks;
 
 namespace PruebaApiSpa.Subdivisions
 {
-    public interface ISubdivisionAppService
+    public interface ISubdivisionAppService: IApplicationService
     {
         Task<ContextDto<ProvinceDto>> GetAll(SearchDto filters);
         Task<ProvinceInputDto> Get(long id);

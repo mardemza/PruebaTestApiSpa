@@ -13,12 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceProxyModule } from '@shared/service-proxies/service-proxy.module';
 import { SharedModule } from '@shared/shared.module';
-// users
-import { UsersComponent } from '@app/users/users.component';
-import { CreateUserDialogComponent } from '@app/users/create-user/create-user-dialog.component';
-import { EditUserDialogComponent } from '@app/users/edit-user/edit-user-dialog.component';
-import { ChangePasswordComponent } from './users/change-password/change-password.component';
-import { ResetPasswordDialogComponent } from './users/reset-password/reset-password.component';
 // layout
 import { HeaderComponent } from './layout/header.component';
 import { HeaderLeftNavbarComponent } from './layout/header-left-navbar.component';
@@ -35,12 +29,6 @@ import { SubdivisionsComponent } from './subdivisions/subdivisions.component';
 @NgModule({
   declarations: [
     AppComponent,
-    // users
-    UsersComponent,
-    CreateUserDialogComponent,
-    EditUserDialogComponent,
-    ChangePasswordComponent,
-    ResetPasswordDialogComponent,
     // layout
     HeaderComponent,
     HeaderLeftNavbarComponent,
@@ -73,10 +61,6 @@ import { SubdivisionsComponent } from './subdivisions/subdivisions.component';
   ],
   providers: [],
   entryComponents: [
-    // users
-    CreateUserDialogComponent,
-    EditUserDialogComponent,
-    ResetPasswordDialogComponent,
     CreateUpdateCountryDialogComponent
   ],
 })

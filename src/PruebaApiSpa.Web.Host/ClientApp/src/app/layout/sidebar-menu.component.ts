@@ -43,8 +43,7 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
 
   getMenuItems(): MenuItem[] {
     return [
-      new MenuItem('Countries', '/', 'fas fa-home'),      
-      new MenuItem('Subdivisions', '/about', 'fas fa-hotel')
+      new MenuItem('Countries', '/', 'fas fa-home')
     ];
   }
 

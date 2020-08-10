@@ -51,4 +51,8 @@ export class CreateUpdateCountryDialogComponent extends AppComponentBase impleme
         this.onSave.emit();
       });
   }
+
+  refreshParent(){
+    this.onSave.emit();
+  }
 }

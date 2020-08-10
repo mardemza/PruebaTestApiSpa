@@ -80,6 +80,7 @@
               </form>
           </tab>
           <tab [heading]="'Subdivisions'" class="pt-3 px-2">
+              <app-subdivisions [country-id]="id" (onSave)="refreshParent()"></app-subdivisions>
           </tab>
       </tabset>
           

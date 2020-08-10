@@ -20,14 +20,11 @@ namespace PruebaApiSpa.Subdivisions
 {
     [AbpAuthorize]
     public class SubdivisionAppService: PruebaApiSpaAppServiceBase, ISubdivisionAppService
-    {
-        private readonly IRepository<Country, long> _countryRepository;
+    {        
         private readonly IRepository<Province, long> _provinceRepository;
 
-        public SubdivisionAppService(IRepository<Country, long> countryRepository,
-                                 IRepository<Province, long> provinceRepository)
-        {
-            _countryRepository = countryRepository;
+        public SubdivisionAppService(IRepository<Province, long> provinceRepository)
+        {     
             _provinceRepository = provinceRepository;
         }
 

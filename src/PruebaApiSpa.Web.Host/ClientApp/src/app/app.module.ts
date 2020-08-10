@@ -30,6 +30,7 @@ import { SidebarLogoComponent } from './layout/sidebar-logo.component';
 import { SidebarUserPanelComponent } from './layout/sidebar-user-panel.component';
 import { SidebarMenuComponent } from './layout/sidebar-menu.component';
 import { CountriesComponent } from './countries/countries.component';
+import { SubdivisionsComponent } from './subdivisions/subdivisions.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { CountriesComponent } from './countries/countries.component';
     SidebarMenuComponent,
     // Country
     CountriesComponent,
-    CreateUpdateCountryDialogComponent
+    CreateUpdateCountryDialogComponent,
+    SubdivisionsComponent
   ],
   imports: [
     CommonModule,

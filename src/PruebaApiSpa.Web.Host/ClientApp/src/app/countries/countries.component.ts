@@ -25,7 +25,7 @@ export class CountriesComponent extends AppComponentBase implements OnInit {
     private _modalService: BsModalService) {
     super(injector);
     this.filters.page = 1;
-    this.filters.pageSize = 10;
+    this.filters.pageSize = 5;
   }
 
   ngOnInit(): void {

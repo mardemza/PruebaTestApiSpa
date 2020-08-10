@@ -86,8 +86,8 @@ namespace PruebaApiSpa.Web.Host.Startup
                 {
                     Version = _apiVersion,
                     Title = "PruebaApiSpa API",
-                    Description = "PruebaApiSpa",
-                    TermsOfService = new Uri("https://example.com/terms"),
+                    Description = "PruebaApiSpa"
+                    // TermsOfService = new Uri("https://example.com/terms"),
                     
                 });
                 options.DocInclusionPredicate((docName, description) => true);
@@ -119,6 +119,7 @@ namespace PruebaApiSpa.Web.Host.Startup
             app.UseCors(_defaultCorsPolicyName); // Enable CORS!
 
             app.Use(async (context, next) => { await next(); if (context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value) && !context.Request.Path.Value.StartsWith("/api/services", StringComparison.InvariantCultureIgnoreCase)) { context.Request.Path = "/index.html"; await next(); } });
+           
             app.UseStaticFiles();
 
             app.UseRouting();

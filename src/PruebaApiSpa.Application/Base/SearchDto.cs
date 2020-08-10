@@ -7,5 +7,6 @@
         public int PageSize { get; set; } = 10;
         public string Order { get; set; } = "desc";
         public string OrderColumn { get; set; } = "Id";
+        public long CountryId { get; set; }
     }
 }
